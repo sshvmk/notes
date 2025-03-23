@@ -16,5 +16,6 @@ My notes are not bound by strict rules of grammar or formatting conventions. The
 - [[math|Math]]
 - [[stock|Stock Market]]
 - [[general|General Muse]]
+- [[econ_fin|Economics and Finance]]
 
 If you are interested to see what I am reading check my [[./readingList.md|reading list]].
