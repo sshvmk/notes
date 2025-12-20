@@ -7,6 +7,10 @@ description: Notes that do not really fit into a specific broad category.
 Books that I am <code style="color : lightblue">reading</code> and <code style="color : yellow">to read</code> \
 Some books I really <code style="color : Aquamarine">liked</code> and few others really <code style="color : pink">stood out to me</code>.
 
+## 2025
+### Technical
+1. <code style="color : lightblue">Deep Learning with Python</code> by François Chollet
+
 ## 2024
 ### Technical 
 1. <code style="color : lightblue">Deep Learning</code> by Ian Goodfellow, Yoshua Bengio and Aaron Courville
