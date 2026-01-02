@@ -83,3 +83,33 @@ You can think of a deep network as a multistage information-distillation process
 
 ### understanding how deep learning works, in three figures
 
+The specification of what a layer does to its input data is stored in the layer’s weights, which in essence are a bunch of numbers. Transformation implemented by a layer is parameterized by its weights. In this context, learning means finding a set of values for the weights of all layers in a network, such that the network will correctly map example inputs to their associated targets.
+
+So, now the question is how do we find the right values for the weights ?
+First, we need a way to measure how good the network is at its job. For this we calculate a loss value, which essentially means to measure how far model output is from expected output. This is known as loss function of network or objective function or cost function. 
+
+Loss function is a function that takes as input the model’s prediction and the target value, and returns a single number estimating how far off the prediction was from the target.
+
+<p align="center" width="75%">
+    <img width="75%" src="assets/dl_chollet/ch1/understanding_dnn.png">
+</p>
+
+Loss score is used to as a feedback signal to adjust the weights such that we lower the loss score. This adjustment is the job of the optimizer, which implements what’s called the Backpropagation algorithm. 
+
+<p align="center" width="75%">
+    <img width="75%" src="assets/dl_chollet/ch1/understanding_dnn2.png">
+</p>
+
+But when we begin the model training we have no loss score, then how do we initialise the weights ? Well, we begin by setting the weights to random values, so the network merely implements a series of random transformations. Naturally, its output is far from what it should ideally be, and the loss score is accordingly very high. But with every example the network processes, the weights are adjusted a little in the correct direction, and the loss score decreases. This is the training loop, which, repeated a sufficient number of times (typically tens of passes over thousands of examples), yields weight values that minimize the loss function. A network with a minimal loss is one for which the outputs are as close as they can be to the targets: a trained network.
+
+## What makes deep learning different ?
+- simplicity : with deep learning, you learn all features in one pass rather than having to engineer them yourself (feature engineering)
+- scalability : deep learning is highly amenable to parallelization on GPUs or more specialized machine learning hardware, so it can take full advantage of Moore’s law
+- versatility and reusability : deep learning models can be trained on additional data without restarting from scratch, making them viable for continuous online learning
+
+## Age of Generative AI
+ChatGPT, Gemini, and Claude or Midjourney. 
+
+Generative AI is powered by very large “foundation models” that learn to reconstruct the text and image content fed into them — reconstruct a sharp image from a noisy version, predict the next word in a sentence, and so on. This means that the targets from figure 1.8 are taken from the input itself. This is referred to as self-supervised learning, and it enables those models to use vast amounts of unlabeled data. Doing away with the manual data annotations that bottlenecked previous brands of machine learning has unlocked a level of scale never seen before — some of these foundation models have hundreds of billions of parameters and are trained on over 1 petabyte of data, at the cost of tens of millions of dollars.
+
+These foundation models operate as a kind of fuzzy database of human knowledge, making them amenable to a very wide range of applications without needing special-purpose programming or retraining. Because they’ve already memorized so much, they can solve new problems merely via prompting — querying the knowledge representations they’ve learned and returning the output most likely to be associated with your prompt.
